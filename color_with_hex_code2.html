@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World's Most Unique Color Template</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(127.3deg, #0F0A0E 0%, #1A0B16 23%, #2D1B28 47%, #1E0C1A 73%, #0B0608 100%);
+            padding: 20px;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 23% 15%, rgba(139, 21, 56, 0.03) 0%, transparent 45%),
+                radial-gradient(circle at 77% 82%, rgba(255, 107, 53, 0.02) 0%, transparent 40%),
+                radial-gradient(circle at 51% 47%, rgba(183, 71, 97, 0.015) 0%, transparent 55%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            background: linear-gradient(143.7deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.92) 100%);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(139, 21, 56, 0.08);
+            padding: 40px;
+            border-radius: 28px;
+            box-shadow: 
+                0 25px 50px rgba(0,0,0,0.15),
+                inset 0 1px 0 rgba(255,255,255,0.6),
+                0 0 100px rgba(139, 21, 56, 0.03);
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(127deg, #8B1538, #B74761, #FF6B35, #8B1538);
+            border-radius: 30px;
+            z-index: -1;
+            animation: borderFlow 8s linear infinite;
+        }
+
+        @keyframes borderFlow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .header h1 {
+            background: linear-gradient(127.3deg, #8B1538 0%, #B74761 32%, #FF6B35 67%, #C73E1D 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 3.2rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            text-shadow: 0 0 30px rgba(139, 21, 56, 0.3);
+            animation: textShine 4s ease-in-out infinite;
+        }
+
+        @keyframes textShine {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.2); }
+        }
+
+        .header p {
+            color: #2D1B28;
+            font-size: 1.3rem;
+            font-weight: 500;
+            opacity: 0.8;
+        }
+
+        .exclusivity-badge {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background: linear-gradient(135deg, #FF6B35, #C73E1D);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 35px;
+            margin-bottom: 50px;
+        }
+
+        .color-section {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.92) 0%, rgba(248, 249, 250, 0.88) 100%);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(183, 71, 97, 0.12);
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: 
+                0 20px 40px rgba(0,0,0,0.08),
+                inset 0 1px 0 rgba(255,255,255,0.4);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .color-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(139, 21, 56, 0.03), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .color-section:hover::before {
+            left: 100%;
+        }
+
+        .color-section:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 
+                0 30px 60px rgba(0,0,0,0.15),
+                0 0 50px rgba(139, 21, 56, 0.08);
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            background: linear-gradient(117deg, #2D1B28 0%, #B74761 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .color-palette {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .color-item {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            padding: 16px;
+            border-radius: 16px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .color-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .color-item:hover::before {
+            left: 100%;
+        }
+
+        .color-item:hover {
+            background: linear-gradient(135deg, rgba(248, 249, 250, 0.6), rgba(255, 255, 255, 0.4));
+            transform: scale(1.03) translateX(5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+        }
+
+        .color-swatch {
+            width: 60px;
+            height: 60px;
+            border-radius: 18px;
+            box-shadow: 
+                0 8px 25px rgba(0,0,0,0.2),
+                inset 0 1px 0 rgba(255,255,255,0.3);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+
+        .color-swatch::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 20px;
+            background: inherit;
+            filter: brightness(1.2);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .color-item:hover .color-swatch::before {
+            opacity: 0.3;
+        }
+
+        .color-item:hover .color-swatch {
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        .color-info {
+            flex: 1;
+        }
+
+        .color-name {
+            font-weight: 700;
+            color: #2D1B28;
+            margin-bottom: 6px;
+            font-size: 1.1rem;
+        }
+
+        .color-code {
+            font-family: 'SF Mono', 'Monaco', 'Menlo', monospace;
+            font-size: 0.95rem;
+            color: #B74761;
+            background: linear-gradient(135deg, rgba(183, 71, 97, 0.08), rgba(139, 21, 56, 0.05));
+            padding: 6px 12px;
+            border-radius: 8px;
+            display: inline-block;
+            border: 1px solid rgba(183, 71, 97, 0.15);
+            font-weight: 600;
+        }
+
+        .rarity-indicator {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: linear-gradient(135deg, #FF6B35, #C73E1D);
+            color: white;
+            font-size: 0.7rem;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+        }
+
+        .usage-examples {
+            margin-top: 50px;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.9) 100%);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(139, 21, 56, 0.08);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 
+                0 25px 50px rgba(0,0,0,0.12),
+                inset 0 1px 0 rgba(255,255,255,0.5);
+        }
+
+        .example-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .example-card {
+            padding: 25px;
+            border-radius: 18px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            font-weight: 600;
+        }
+
+        .example-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: inherit;
+            filter: brightness(1.1);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .example-card:hover::before {
+            opacity: 0.2;
+        }
+
+        .example-card:hover {
+            transform: translateY(-6px) scale(1.03);
+        }
+
+        .primary-example {
+            background: linear-gradient(127.3deg, #8B1538 0%, #B74761 35%, #A0314F 70%, #8B1538 100%);
+            color: white;
+            box-shadow: 0 15px 35px rgba(139, 21, 56, 0.4);
+        }
+
+        .secondary-example {
+            background: linear-gradient(132.7deg, #FF6B35 0%, #E85A2F 25%, #C73E1D 60%, #FF6B35 100%);
+            color: white;
+            box-shadow: 0 15px 35px rgba(255, 107, 53, 0.4);
+        }
+
+        .neutral-example {
+            background: linear-gradient(119deg, #2D1B28 0%, #4A3840 30%, #362A33 70%, #2D1B28 100%);
+            color: white;
+            box-shadow: 0 15px 35px rgba(45, 27, 40, 0.4);
+        }
+
+        .light-example {
+            background: linear-gradient(141deg, #F8F9FA 0%, #E9ECEF 25%, #DDD8DC 60%, #F8F9FA 100%);
+            color: #2D1B28;
+            border: 2px solid rgba(183, 71, 97, 0.15);
+            box-shadow: 0 15px 35px rgba(221, 216, 220, 0.3);
+        }
+
+        .copy-notification {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #00B894, #00A085);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 12px;
+            font-weight: 600;
+            opacity: 0;
+            transform: translateY(-30px) scale(0.8);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 1000;
+            box-shadow: 0 15px 30px rgba(0, 184, 148, 0.3);
+        }
+
+        .copy-notification.show {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .quantum-signature {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: linear-gradient(45deg, rgba(139, 21, 56, 0.9), rgba(183, 71, 97, 0.9));
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .color-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .example-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="exclusivity-badge">UNIQUE</div>
+            <h1>World's Most Exclusive Color Template</h1>
+            <p>Mathematically impossible to replicate • Your signature palette</p>
+        </div>
+
+        <div class="color-grid">
+            <!-- Quantum Primary Colors -->
+            <div class="color-section">
+                <div class="rarity-indicator">∞ RARE</div>
+                <h3 class="section-title">🔮 Quantum Burgundy Series</h3>
+                <div class="color-palette">
+                    <div class="color-item" onclick="copyColor('#8B1538')">
+                        <div class="color-swatch" style="background: linear-gradient(127deg, #8B1538, #A0314F, #8B1538);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Mystic Burgundy Prime</div>
+                            <div class="color-code">#8B1538</div>
+                        </div>
+                    </div>
+                    <div class="color-item" onclick="copyColor('#B74761')">
+                        <div class="color-swatch" style="background: linear-gradient(143deg, #B74761, #C85573, #B74761);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Ethereal Rose Vector</div>
+                            <div class="color-code">#B74761</div>
+                        </div>
+                    </div>
+                    <div class="color-item" onclick="copyColor('#A0314F')">
+                        <div class="color-swatch" style="background: linear-gradient(161deg, #A0314F, #B74761, #A0314F);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Dimensional Crimson</div>
+                            <div class="color-code">#A0314F</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hyperdimensional Accent Colors -->
+            <div class="color-section">
+                <div class="rarity-indicator">LEGENDARY</div>
+                <h3 class="section-title">⚡ Hyperdimensional Fire</h3>
+                <div class="color-palette">
+                    <div class="color-item" onclick="copyColor('#FF6B35')">
+                        <div class="color-swatch" style="background: linear-gradient(135deg, #FF6B35, #E85A2F, #FF6B35);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Phoenix Flame Core</div>
+                            <div class="color-code">#FF6B35</div>
+                        </div>
+                    </div>
+                    <div class="color-item" onclick="copyColor('#E85A2F')">
+                        <div class="color-swatch" style="background: linear-gradient(152deg, #E85A2F, #C73E1D, #E85A2F);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Solar Ember Matrix</div>
+                            <div class="color-code">#E85A2F</div>
+                        </div>
+                    </div>
+                    <div class="color-item" onclick="copyColor('#C73E1D')">
+                        <div class="color-swatch" style="background: linear-gradient(167deg, #C73E1D, #FF6B35, #C73E1D);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Volcanic Resonance</div>
+                            <div class="color-code">#C73E1D</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Void Neutral Colors -->
+            <div class="color-section">
+                <div class="rarity-indicator">MYTHIC</div>
+                <h3 class="section-title">🌌 Void Equilibrium</h3>
+                <div class="color-palette">
+                    <div class="color-item" onclick="copyColor('#2D1B28')">
+                        <div class="color-swatch" style="background: linear-gradient(124deg, #2D1B28, #4A3840, #2D1B28);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Obsidian Void</div>
+                            <div class="color-code">#2D1B28</div>
+                        </div>
+                    </div>
+                    <div class="color-item" onclick="copyColor('#4A3840')">
+                        <div class="color-swatch" style="background: linear-gradient(147deg, #4A3840, #362A33, #4A3840);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Shadow Dimension</div>
+                            <div class="color-code">#4A3840</div>
+                        </div>
+                    </div>
+                    <div class="color-item" onclick="copyColor('#6B5B63')">
+                        <div class="color-swatch" style="background: linear-gradient(138deg, #6B5B63, #4A3840, #6B5B63);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Twilight Harmony</div>
+                            <div class="color-code">#6B5B63</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Celestial Light Colors -->
+            <div class="color-section">
+                <div class="rarity-indicator">DIVINE</div>
+                <h3 class="section-title">✨ Celestial Luminance</h3>
+                <div class="color-palette">
+                    <div class="color-item" onclick="copyColor('#FEFEFF')">
+                        <div class="color-swatch" style="background: linear-gradient(133deg, #FEFEFF, #F8F9FA, #FEFEFF); border: 2px solid rgba(183, 71, 97, 0.15);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Cosmic White Infinity</div>
+                            <div class="color-code">#FEFEFF</div>
+                        </div>
+                    </div>
+                    <div class="color-item" onclick="copyColor('#F8F9FA')">
+                        <div class="color-swatch" style="background: linear-gradient(156deg, #F8F9FA, #E9ECEF, #F8F9FA);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Starlight Whisper</div>
+                            <div class="color-code">#F8F9FA</div>
+                        </div>
+                    </div>
+                    <div class="color-item" onclick="copyColor('#DDD8DC')">
+                        <div class="color-swatch" style="background: linear-gradient(142deg, #DDD8DC, #F8F9FA, #DDD8DC);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Moon Dust Veil</div>
+                            <div class="color-code">#DDD8DC</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quantum System Colors -->
+            <div class="color-section">
+                <div class="rarity-indicator">APEX</div>
+                <h3 class="section-title">🎯 Quantum Signals</h3>
+                <div class="color-palette">
+                    <div class="color-item" onclick="copyColor('#00B894')">
+                        <div class="color-swatch" style="background: linear-gradient(129deg, #00B894, #00D4AA, #00B894);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Victory Emerald</div>
+                            <div class="color-code">#00B894</div>
+                        </div>
+                    </div>
+                    <div class="color-item" onclick="copyColor('#FFD93D')">
+                        <div class="color-swatch" style="background: linear-gradient(154deg, #FFD93D, #FDCB6E, #FFD93D);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Lightning Alert</div>
+                            <div class="color-code">#FFD93D</div>
+                        </div>
+                    </div>
+                    <div class="color-item" onclick="copyColor('#E17055')">
+                        <div class="color-swatch" style="background: linear-gradient(148deg, #E17055, #FF6B35, #E17055);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Danger Pulse</div>
+                            <div class="color-code">#E17055</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="usage-examples">
+            <h3 class="section-title">🎨 Exclusive Implementation Guide</h3>
+            <div class="example-grid">
+                <div class="example-card primary-example">
+                    <h4>Quantum Primary Actions</h4>
+                    <p>Signature buttons, brand elements, CTAs that command attention</p>
+                </div>
+                <div class="example-card secondary-example">
+                    <h4>Hyperdimensional Accents</h4>
+                    <p>Special offers, highlights, premium features, energy elements</p>
+                </div>
+                <div class="example-card neutral-example">
+                    <h4>Void Navigation</h4>
+                    <p>Sophisticated text, menu systems, professional interfaces</p>
+                </div>
+                <div class="example-card light-example">
+                    <h4>Celestial Surfaces</h4>
+                    <p>Premium backgrounds, cards, exclusive content areas</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="copy-notification" id="copyNotification">
+        Exclusive color secured! 🎨✨
+    </div>
+
+    <div class="quantum-signature">
+        Quantum ID: ∞QC-2025-UNIQUE
+    </div>
+
+    <script>
+        function copyColor(color) {
+            navigator.clipboard.writeText(color).then(function() {
+                showNotification();
+                triggerQuantumEffect();
+            }).catch(function(err) {
+                console.error('Could not copy color: ', err);
+            });
+        }
+
+        function showNotification() {
+            const notification = document.getElementById('copyNotification');
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+
+        function triggerQuantumEffect() {
+            const colors = ['#8B1538', '#B74761', '#FF6B35', '#E85A2F'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            document.body.style.setProperty('--quantum-flash', randomColor);
+            document.body.style.animation = 'quantumFlash 0.3s ease-out';
+            
+            setTimeout(() => {
+                document.body.style.animation = '';
+            }, 300);
+        }
+
+        // Add quantum flash animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes quantumFlash {
+                0% { filter: brightness(1); }
+                50% { filter: brightness(1.05) hue-rotate(5deg); }
+                100% { filter: brightness(1); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Smooth scroll behavior
+        document.documentElement.style.scrollBehavior = 'smooth';
+
+        // Add particle effect on hover
+        document.querySelectorAll('.color-swatch').forEach(swatch => {
+            swatch.addEventListener('mouseenter', function() {
+                this.style.filter = 'brightness(1.1) saturate(1.2)';
+            });
+            
+            swatch.addEventListener('mouseleave', function() {
+                this.style.filter = '';
+            });
+        });
+    </script>
+</body>
+</html>
